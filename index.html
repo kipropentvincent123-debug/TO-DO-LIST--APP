@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A responsive to-do list app to organize your day.">
+  <title>My To-Do List</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <p class="eyebrow">YOUR PERSONAL PLANNER</p>
+      <h1>My To-Do List <span>✓</span></h1>
+      <p class="subtitle">Small steps make big progress.</p>
+    </header>
+
+    <form id="task-form" class="task-form">
+      <input
+        type="text"
+        id="task-input"
+        placeholder="What do you need to do?"
+        maxlength="150"
+        aria-label="New task"
+        required
+      >
+      <button type="submit" class="add-button">+ Add Task</button>
+    </form>
+
+    <p id="message" class="message" aria-live="polite"></p>
+
+    <section class="task-panel">
+      <div class="panel-heading">
+        <h2>My Tasks</h2>
+        <span id="task-count">0 tasks left</span>
+      </div>
+
+      <nav class="filters" aria-label="Filter tasks">
+        <button type="button" class="filter active" data-filter="all">All</button>
+        <button type="button" class="filter" data-filter="active">Active</button>
+        <button type="button" class="filter" data-filter="completed">Completed</button>
+      </nav>
+
+      <ul id="task-list" class="task-list"></ul>
+
+      <div id="empty-state" class="empty-state">
+        <span class="empty-icon">📝</span>
+        <h3>No tasks yet</h3>
+        <p>Add a task above to get started.</p>
+      </div>
+
+      <footer class="panel-footer">
+        <span id="progress-text">0% completed</span>
+        <button id="clear-completed" type="button" class="clear-button">
+          Clear completed
+        </button>
+      </footer>
+
+      <div class="progress-track">
+        <div id="progress-bar" class="progress-bar"></div>
+      </div>
+    </section>
+
+    <p class="app-footer">Stay focused. One task at a time.</p>
+  </main>
+</body>
+</html>
